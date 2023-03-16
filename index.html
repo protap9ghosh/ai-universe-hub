@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>AI Universe Hub</title>
+        <link rel="shortcut icon" href="./images/ai.png" type="image/x-icon"/>
+        <!-- font-awesome cdn link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+
+        <!-- daisyui cdn link -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css"/>
+
+        <!-- css link -->
+        <link rel="stylesheet" href="./style/style.css"/>
+    </head>
+
+    <body>
+        <!-- header section start -->
+        <header class="flex flex-col items-center justify-center mt-4">
+            <h1 class="text-4xl font-bold">AI Universe Hub</h1>
+            <button id="sortByDateBtn" class="bg-red-500 hover:bg-red-600 px-4 py-2 text-lg rounded-md text-white mt-4">
+                Sort By Date
+            </button>
+        </header>
+
+        <!-- all card container -->
+        <main class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-around mt-8" id="main-container"></main>
+
+        <!-- modal section -->
+        <input type="checkbox" id="my-modal-3" class="modal-toggle"/>
+        <div class="modal">
+            <div class="modal-box relative w-[90%] max-w-4xl">
+                <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2" >✕</label>
+                <!-- modal info -->
+                <div class="flex p-2 gap-4 modal-container" id="modal-info"></div>
+            </div>
+        </div>
+
+        <!-- show all button -->
+        <div class="flex justify-center mt-2">
+            <button id="showAll-btn" class="bg-red-500 hover:bg-red-600 px-4 py-2 text-lg rounded-md text-white my-8 hidden">
+                Show More
+            </button>
+        </div>
+
+        <!-- loading spin animation -->
+        <div id="loader-section">
+            <div class="loader" id="loader"></div>
+        </div>
+
+
+        <!-- tailwind css -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- custom javascript file -->
+        <script src="./js/script.js"></script>
+    </body>
+</html>
