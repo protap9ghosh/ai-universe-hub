@@ -101,3 +101,21 @@ const toolInfo = (id) => {
   }
 };
 
+
+// Displaying dynamic ID data through modals
+const displayToolInfo = (singleToolInfo) => {
+  const {
+    description,
+    pricing,
+    features,
+    integrations,
+    image_link,
+    input_output_examples,
+    accuracy,
+  } = singleToolInfo;
+
+  const featureArr = [];
+  for (const feature in features) {
+    const values = Object.values(features[feature]);
+    featureArr.push(values[0]);
+  }
