@@ -119,3 +119,33 @@ const displayToolInfo = (singleToolInfo) => {
     const values = Object.values(features[feature]);
     featureArr.push(values[0]);
   }
+
+  const modalInfo = document.getElementById("modal-info");
+  modalInfo.innerHTML = "";
+  modalInfo.innerHTML += `
+    
+    <div class="shadow-sm p-2 rounded-md bg-red-100">
+    <p class="font-semibold text-lg mb-2">
+      ${description}
+    </p>
+    <div class="flex gap-2 justify-between px-2 my-4 price-container">
+      <div
+        class="flex flex-col items-center justify-center bg-white p-2 rounded-md text-green-500 font-bold"
+      >
+        <span>${pricing !== null ? pricing[0].price : "Free Of Cost"} </span> ${
+    pricing !== null ? "/" + pricing[0].plan : "/Basic"
+  }
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-white p-2 rounded-md text-orange-500 font-bold"
+      >
+      <span>${pricing !== null ? pricing[1].price : "Free Of Cost"} </span> ${
+    pricing !== null ? "/" + pricing[1].plan : "/Pro"
+  }
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-white p-2 rounded-md text-blue-500 font-bold"
+      >
+      <span>${pricing !== null ? pricing[2].price : "Free Of Cost"} </span> ${
+    pricing !== null ? "/" + pricing[2].plan : "/Enterprise"
+  }
