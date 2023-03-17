@@ -1,0 +1,18 @@
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  .modal-container {
+    flex-direction: column;
+  }
+
+  .price-container {
+    flex-direction: column;
+  }
+
+  .model-image {
+    width: 100%;
+  }
+
+  .accuracy-text {
+    font-size: 14px;
+    padding: 4px;
+  }
+}
