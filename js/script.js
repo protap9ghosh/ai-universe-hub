@@ -149,3 +149,76 @@ const displayToolInfo = (singleToolInfo) => {
       <span>${pricing !== null ? pricing[2].price : "Free Of Cost"} </span> ${
     pricing !== null ? "/" + pricing[2].plan : "/Enterprise"
   }
+      </div>
+    </div>
+    <div class="flex gap-4 justify-between px-2">
+      <div>
+        <h2 class="font-semibold">Features:</h2>
+        <ul class="list-disc ml-4">
+            ${
+              featureArr
+                ? featureArr.map((feature) => `<li>${feature}</li>`).join("")
+                : `<span class="ml-[-15px] font-medium text-yellow-500">No Data Found</span>`
+            }
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-semibold">Integrations:</h2>
+        <ul class="list-disc ml-4">
+        ${
+          integrations
+            ? integrations
+                .map((integration) => `<li>${integration}</li>`)
+                .join("")
+            : `<span class="ml-[-15px] font-medium text-yellow-500">No Data Found</span>`
+        }
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="shadow-sm p-2 rounded-sm w-[100%] relative">
+    <img
+      class="rounded-md model-image"
+      src=${image_link[0]}
+      alt=""
+    />
+    <h3 class="text-center text-lg font-bold mt-2">${
+      input_output_examples
+        ? input_output_examples[0].input
+        : "No Question Available"
+    } </h3>
+    <p class="text-center mt-1 ">
+      ${
+        input_output_examples
+          ? input_output_examples[0].output
+          : "No! Not Yet! Take a break!!!"
+      }
+    </p>
+    ${
+      accuracy.score
+        ? `
+    <p class="bg-red-500 p-2 rounded-md w-fit text-white text-base absolute top-0 right-0 mr-4 mt-4 accuracy-text"><span> ${
+      accuracy.score * 100 + "%"
+    } </span>Accuracy</p>
+    
+    `
+        : `<p class="bg-red-500 p-2 rounded-md w-fit text-white text-base absolute top-0 right-0 mr-4 mt-4 hidden"><span></span>Accuracy</p>`
+    }
+    
+  </div>
+    
+    
+    `;
+};
+
+fetchData();
+
+
+// The function work displays the website loading animation
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader-section");
+  setTimeout(function () {
+    loader.style.display = "none";
+  }, 1000);
+});
